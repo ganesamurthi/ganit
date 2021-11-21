@@ -1,0 +1,9 @@
+{% extends 'courses/base.html' %}
+  {% load embed_video_tags %}
+
+  {% block title %} {{object.title}} {% endblock %}
+{% block content %}
+  <h1>{{ object.title }}</h1>
+  {% video object.url 'large' %}
+
+{% endblock %}

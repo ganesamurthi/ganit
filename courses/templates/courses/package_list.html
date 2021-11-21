@@ -1,0 +1,30 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+{% block title %} Ganit Online {% endblock %}
+
+{% block content %}
+    <h1>CBSE  हिंदी माध्यम गणित  पाठ्यक्रम।</h1>
+
+      <div class="container">
+        <div class="row ">
+
+            {% for object in object_list %}
+              <div class="col mb-4">
+                <div class="card" style="width:18rem;">
+
+                  <div class="card-body">
+
+                    <h5 class="card-title">{{ object }}</h5>
+                    <img src="{% static 'courses/images/images.jpeg' %}" class="img-fluid rounded mb-4 mb-lg-0" alt="course image"/>
+                    <p class="card-text">{{ object.description }}</p>
+                    <a href="{{ object.get_absolute_url }}" class="btn btn-primary">Start Learning</a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+        </div>
+      </div>
+
+
+{% endblock %}
